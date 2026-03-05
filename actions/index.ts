@@ -37,7 +37,7 @@ export async function createContact(formData: FormData) {
 
     return {
       success: false,
-      message: "Something went wrong, please try again.",
+      error: "Something went wrong, please try again.",
     };
   }
 }

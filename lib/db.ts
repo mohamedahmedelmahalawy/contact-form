@@ -15,6 +15,7 @@ async function dbConnect() {
     console.log("Connected to mongodb", db);
   } catch (error) {
     console.error("Failed to connect to mongodb", error);
+    throw error;
   }
 }
 
