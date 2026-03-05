@@ -1,6 +1,6 @@
-import mongoose from "mongoose";
+import mongoose, { HydratedDocument, InferSchemaType } from "mongoose";
 
-const ContactSchema = new mongoose.Schema(
+export const ContactSchema = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -36,5 +36,10 @@ const ContactSchema = new mongoose.Schema(
   { timestamps: true },
 );
 
+export type ContactType = HydratedDocument<
+  InferSchemaType<typeof ContactSchema>
+>;
 const Contact =
   mongoose.models.Contact || mongoose.model("Contact", ContactSchema);
+
+export default Contact;
